@@ -1,0 +1,12 @@
+--generate fibonacci sequence until given term number
+fibonacciList :: Int -> [Integer]
+fibonacciList 0 = [0]
+fibonacciList 1 = [0,1]
+fibonacciList n = pls ++ ((last pls + preLast):[])
+	where 
+	      pls     = fibonacciList(n-1) --list of fibonacci sequence until (n-1)
+	      preLast = head(drop ((length pls)-2) pls) --return the before last element of pls
+		  
+-- return the given term number of fibonacci sequence    
+fibonacci :: Int->Integer
+fibonacci n = last (fibonacciList n) 
