@@ -1,0 +1,9 @@
+--selection sort implementation	
+selectSort :: (Ord a)=>[a]->[a]
+selectSort [] = []
+selectSort [x] = [x]
+selectSort xs =  mins ++ selectSort rests
+	where 
+		  min   = minimum xs
+		  mins  = [y|y<-xs,y==min] --list of minimum element
+		  rests = [x|x<-xs,x/=min] --rest of list
